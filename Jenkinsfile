@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = "tharun0125/mnv"
         DOCKER_TAG = "latest"
-        DOCKER_CREDENTIALS_ID = "e752556d-0bc6-4985-ad16-6f2a663ce000"
+        DOCKER_CREDENTIALS_ID = "d0d6ee44-22c2-4674-9568-55f19d01beca"
         
         KUBECONFIG = "/var/lib/jenkins/.kube/config"
     }
@@ -52,7 +52,7 @@ pipeline {
         stage('Login to Docker Hub') {
             steps {
                 echo "Logging into Docker Hub..."
-                withCredentials([usernamePassword(credentialsId: 'e752556d-0bc6-4985-ad16-6f2a663ce000', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'd0d6ee44-22c2-4674-9568-55f19d01beca', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS'
                 }
             }
